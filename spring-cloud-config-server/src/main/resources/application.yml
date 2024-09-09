@@ -1,0 +1,22 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: centralized-configuration-service
+  profiles:
+    active: native
+  security:
+    user:
+      name: root
+      password: s3cr3t
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/configs
+encrypt:
+  keyStore:
+    location: classpath:/config-server.jks
+    password: my-s70r3-s3cr3t
+    alias: config-server-key
+    secret: my-k34-s3cr3t

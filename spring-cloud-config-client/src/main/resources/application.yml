@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-client
+  profiles:
+    active: development
+  config:
+    import: optional:configserver:http://root:s3cr3t@localhost:8888
+management:
+  endpoints:
+    web:
+      exposure:
+        #You also want to enable the /refresh endpoint, to demonstrate dynamic configuration changes. The listing above shows how to do so via the management.endpoints.web.exposure.include property.
+        include: "*"
